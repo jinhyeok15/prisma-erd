@@ -26,3 +26,7 @@ For project overview, features, and setup instructions, see [README.md](./README
 2. **Progressive Enhancement**: Start simple, add auth only when needed
 3. **Visual Clarity**: Diagrams should be self-explanatory
 4. **Shareability First**: Every ERD gets a permanent, shareable URL
+
+## Rules
+
+- Don't use the yarn dev or yarn build commands. The developer has the authority.

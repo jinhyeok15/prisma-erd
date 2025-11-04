@@ -15,6 +15,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Prisma ERD Generator - Transform Schemas into Interactive Diagrams",
   description: "Paste your Prisma schema and get a beautiful, shareable ERD instantly.",
+  icons: {
+    icon: [
+      { url: "/logo64.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: "/logo256.svg",
+  },
 };
 
 export default function RootLayout({

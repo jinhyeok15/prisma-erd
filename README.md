@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Prisma ERD Logo](https://via.placeholder.com/200x200?text=Prisma+ERD)
+![Prisma ERD Logo](./public/logo.svg)
 
 **Transform your Prisma schema into beautiful, interactive ERD diagrams**
 

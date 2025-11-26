@@ -2,6 +2,11 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
+import FeatureCard from './_components/FeatureCard'
+import StepCard from './_components/StepCard'
+import TierCard from './_components/TierCard'
+import UseCaseCard from './_components/UseCaseCard'
+import FloatingMessageButton from './_components/FloatingMessageButton'
 
 export default function Home() {
   const [schema, setSchema] = useState('')
@@ -135,9 +140,7 @@ model Tag {
 
           {/* Key Features */}
           <div className="mt-32">
-            <h2 className="text-center text-3xl font-bold text-white sm:text-4xl">
-              Key Features
-            </h2>
+            <h2 className="text-center text-3xl font-bold text-white sm:text-4xl">Key Features</h2>
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               <FeatureCard
                 icon="🚀"
@@ -168,9 +171,7 @@ model Tag {
 
           {/* How It Works */}
           <div className="mt-32">
-            <h2 className="text-center text-3xl font-bold text-white sm:text-4xl">
-              How It Works
-            </h2>
+            <h2 className="text-center text-3xl font-bold text-white sm:text-4xl">How It Works</h2>
             <div className="mt-12 grid gap-8 sm:grid-cols-3">
               <StepCard
                 number="1"
@@ -184,7 +185,12 @@ model Tag {
                 description="Click one button to create your ERD"
                 color="purple"
               />
-              <StepCard number="3" title="Share" description="Get a permanent URL to share with anyone" color="pink" />
+              <StepCard
+                number="3"
+                title="Share"
+                description="Get a permanent URL to share with anyone"
+                color="pink"
+              />
             </div>
           </div>
 
@@ -225,7 +231,11 @@ model Tag {
                 title="Documentation"
                 description="Share clean database structure with your team"
               />
-              <UseCaseCard icon="👨‍💻" title="Code Reviews" description="Visualize schema changes in PRs" />
+              <UseCaseCard
+                icon="👨‍💻"
+                title="Code Reviews"
+                description="Visualize schema changes in PRs"
+              />
               <UseCaseCard
                 icon="🎓"
                 title="Onboarding"
@@ -251,8 +261,8 @@ model Tag {
                   <div className="flex items-start gap-4 rounded-lg bg-slate-800/50 p-4">
                     <span className="text-2xl">❌</span>
                     <span>
-                      Generic ERD tools miss Prisma&apos;s @relation attributes, composite keys, and special
-                      decorators
+                      Generic ERD tools miss Prisma&apos;s @relation attributes, composite keys, and
+                      special decorators
                     </span>
                   </div>
                   <div className="flex items-start gap-4 rounded-lg bg-slate-800/50 p-4">
@@ -272,7 +282,9 @@ model Tag {
 
           {/* Footer CTA */}
           <div className="mt-32 text-center">
-            <h2 className="text-3xl font-bold text-white sm:text-4xl">Ready to visualize your schema?</h2>
+            <h2 className="text-3xl font-bold text-white sm:text-4xl">
+              Ready to visualize your schema?
+            </h2>
             <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
@@ -331,102 +343,9 @@ model Tag {
           </footer>
         </div>
       </main>
-    </div>
-  )
-}
 
-function FeatureCard({
-  icon,
-  title,
-  description,
-  gradient,
-}: {
-  icon: string
-  title: string
-  description: string
-  gradient: string
-}) {
-  return (
-    <div className="group relative overflow-hidden rounded-xl bg-slate-900/50 p-6 backdrop-blur-sm transition-all hover:bg-slate-800/50">
-      <div
-        className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 transition-opacity group-hover:opacity-5`}
-      />
-      <div className="relative">
-        <div className="text-4xl">{icon}</div>
-        <h3 className="mt-4 text-xl font-semibold text-white">{title}</h3>
-        <p className="mt-2 text-gray-400">{description}</p>
-      </div>
-    </div>
-  )
-}
-
-function StepCard({
-  number,
-  title,
-  description,
-  color,
-}: {
-  number: string
-  title: string
-  description: string
-  color: 'cyan' | 'purple' | 'pink'
-}) {
-  const gradients = {
-    cyan: 'from-cyan-500 to-blue-500',
-    purple: 'from-purple-500 to-pink-500',
-    pink: 'from-pink-500 to-rose-500',
-  }
-
-  return (
-    <div className="text-center">
-      <div className="relative mx-auto flex h-20 w-20 items-center justify-center">
-        <div
-          className={`absolute inset-0 animate-pulse rounded-full bg-gradient-to-r ${gradients[color]} opacity-20 blur-xl`}
-        />
-        <div
-          className={`relative flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-r ${gradients[color]} text-2xl font-bold text-white shadow-lg`}
-        >
-          {number}
-        </div>
-      </div>
-      <h3 className="mt-6 text-xl font-semibold text-white">{title}</h3>
-      <p className="mt-2 text-gray-400">{description}</p>
-    </div>
-  )
-}
-
-function TierCard({
-  title,
-  description,
-  gradient,
-  borderGradient,
-  highlight = false,
-}: {
-  title: string
-  description: string
-  gradient: string
-  borderGradient: string
-  highlight?: boolean
-}) {
-  return (
-    <div
-      className={`group relative overflow-hidden rounded-xl p-1 transition-all ${highlight ? 'scale-105' : 'hover:scale-105'}`}
-    >
-      <div className={`absolute -inset-1 animate-pulse rounded-xl bg-gradient-to-r ${borderGradient} opacity-30 blur`} />
-      <div className={`relative rounded-lg bg-gradient-to-br ${gradient} p-6 ${highlight ? 'shadow-2xl' : ''}`}>
-        <h3 className="text-xl font-semibold text-white">{title}</h3>
-        <p className={`mt-2 ${highlight ? 'text-gray-200' : 'text-gray-400'}`}>{description}</p>
-      </div>
-    </div>
-  )
-}
-
-function UseCaseCard({ icon, title, description }: { icon: string; title: string; description: string }) {
-  return (
-    <div className="group rounded-xl bg-slate-900/50 p-6 backdrop-blur-sm transition-all hover:bg-slate-800/50">
-      <div className="text-3xl">{icon}</div>
-      <h3 className="mt-3 text-lg font-semibold text-white">{title}</h3>
-      <p className="mt-2 text-sm text-gray-400">{description}</p>
+      {/* Floating Message Button */}
+      <FloatingMessageButton />
     </div>
   )
 }

@@ -27,6 +27,20 @@ For project overview, features, and setup instructions, see [README.md](./README
 3. **Visual Clarity**: Diagrams should be self-explanatory
 4. **Shareability First**: Every ERD gets a permanent, shareable URL
 
+## Coding Conventions
+
+### Component Exports
+
+- All components should be exported as **default exports**, not named exports
+- Example:
+  ```tsx
+  // ✅ Correct
+  export default function MyComponent() { ... }
+
+  // ❌ Incorrect
+  export function MyComponent() { ... }
+  ```
+
 ## Rules
 
 - Don't use the yarn dev or yarn build commands. The developer has the authority.

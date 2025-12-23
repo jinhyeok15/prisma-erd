@@ -1,5 +1,7 @@
 # Prisma ERD Generator - Project Context
 
+For comprehensive project details, development roadmap, and technical decisions, see [CONTEXT.md](./CONTEXT.md).
+
 For project overview, features, and setup instructions, see [README.md](./README.md).
 
 ## Core Product Concepts

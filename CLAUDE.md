@@ -45,4 +45,6 @@ For project overview, features, and setup instructions, see [README.md](./README
 
 ## Rules
 
-- Don't use the yarn dev or yarn build commands. The developer has the authority.
+- **Don't start implementation immediately**: Wait for explicit direction from the developer before beginning any coding work. Provide analysis, exploration, and suggestions first, then await approval.
+- **Follow TDD approach**: When implementing features, write tests first before implementation code.
+- **Don't use the yarn dev or yarn build commands**: The developer has the authority to run these commands.

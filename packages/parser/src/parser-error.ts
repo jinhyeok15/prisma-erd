@@ -5,7 +5,7 @@
  * Provides actionable error messages with line/column locations.
  */
 
-import { SourceLocation } from './types/schema'
+import type { SourceLocation } from './types/schema'
 
 // ============================================================================
 // Error Severity
